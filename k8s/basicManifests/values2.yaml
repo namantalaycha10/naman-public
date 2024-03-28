@@ -1,0 +1,4 @@
+#hi there!
+# just adding some comments for testing 
+replicas: 2
+name: release-<+INFRA_KEY>
