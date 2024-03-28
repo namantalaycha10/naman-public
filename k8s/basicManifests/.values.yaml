@@ -25,6 +25,6 @@ env:
   config:
     key1: value1
   secrets:
-    key2: <+configFile.getAsBase64("secret")>
+    key2: value2
 
 testVal: 2
