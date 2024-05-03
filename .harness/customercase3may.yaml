@@ -1,0 +1,24 @@
+pipeline:
+  name: customer-case-3may
+  identifier: customercase3may
+  projectIdentifier: Naman_Test
+  orgIdentifier: Ng_Pipelines_K8s_Organisations
+  tags: {}
+  stages:
+    - stage:
+        name: s1
+        identifier: s1
+        tags: {}
+        template:
+          templateRef: namanremote1
+          versionLabel: "1"
+          templateInputs:
+            type: Deployment
+            spec:
+              environment:
+                environmentRef: env
+                infrastructureDefinitions:
+                  - identifier: K8s_per_Infra
+              service:
+                serviceRef: <+input>
+                serviceInputs: <+input>
