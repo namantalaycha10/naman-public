@@ -15,6 +15,11 @@ pipeline:
           templateInputs:
             type: Deployment
             spec:
+              environment:
+                environmentRef: <+input>
+                environmentInputs: <+input>
+                serviceOverrideInputs: <+input>
+                infrastructureDefinitions: <+input>
               service:
                 serviceRef: SVC
                 serviceInputs:
