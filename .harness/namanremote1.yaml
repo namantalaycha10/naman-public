@@ -11,10 +11,11 @@ template:
     spec:
       deploymentType: Kubernetes
       environment:
-        environmentRef: env
+        environmentRef: <+input>
         deployToAll: false
-        infrastructureDefinitions:
-          - identifier: K8s_per_Infra
+        environmentInputs: <+input>
+        serviceOverrideInputs: <+input>
+        infrastructureDefinitions: <+input>
       service:
         serviceRef: <+input>
         serviceInputs: <+input>
