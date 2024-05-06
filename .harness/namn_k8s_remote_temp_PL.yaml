@@ -1,0 +1,30 @@
+pipeline:
+  name: namn k8s remote temp PL
+  identifier: namn_k8s_remote_temp_PL
+  projectIdentifier: Naman_CDP_Test
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: s1
+        identifier: s1
+        tags: {}
+        template:
+          templateRef: namanstageremotetemplate
+          versionLabel: v1
+          templateInputs:
+            type: Deployment
+            spec:
+              environment:
+                environmentRef: env
+                infrastructureDefinitions: <+input>
+              service:
+                serviceRef: svc1
+                serviceInputs:
+                  serviceDefinition:
+                    type: Kubernetes
+                    spec:
+                      artifacts:
+                        primary:
+                          primaryArtifactRef: ""
+                          sources: ""
