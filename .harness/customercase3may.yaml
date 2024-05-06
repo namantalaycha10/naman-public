@@ -18,7 +18,7 @@ pipeline:
               environment:
                 environmentRef: env
                 infrastructureDefinitions:
-                  - identifier: eks_infra
+                  - identifier: K8s_per_Infra
               service:
                 serviceRef: SVC
                 serviceInputs:
