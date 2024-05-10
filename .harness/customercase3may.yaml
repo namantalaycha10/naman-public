@@ -20,7 +20,6 @@ pipeline:
                 infrastructureDefinitions:
                   - identifier: K8s_per_Infra
               service:
-                serviceRef: SVC
                 serviceInputs:
                   serviceDefinition:
                     type: Kubernetes
