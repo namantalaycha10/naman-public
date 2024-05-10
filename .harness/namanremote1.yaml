@@ -17,8 +17,15 @@ template:
         serviceOverrideInputs: <+input>
         infrastructureDefinitions: <+input>
       service:
-        serviceRef: <+input>
-        serviceInputs: <+input>
+        serviceRef: SVC
+        serviceInputs:
+          serviceDefinition:
+            type: Kubernetes
+            spec:
+              artifacts:
+                primary:
+                  primaryArtifactRef: <+input>
+                  sources: <+input>
       execution:
         steps:
           - step:
