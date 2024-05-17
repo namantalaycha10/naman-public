@@ -20,5 +20,12 @@ pipeline:
                 infrastructureDefinitions:
                   - identifier: k8s_infra
               service:
-                serviceRef: <+input>
-                serviceInputs: <+input>
+                serviceRef: k8s_service
+                serviceInputs:
+                  serviceDefinition:
+                    type: Kubernetes
+                    spec:
+                      artifacts:
+                        primary:
+                          primaryArtifactRef: ""
+                          sources: ""
