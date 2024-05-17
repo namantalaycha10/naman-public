@@ -16,10 +16,9 @@ pipeline:
             type: Deployment
             spec:
               environment:
-                environmentRef: <+input>
-                environmentInputs: <+input>
-                serviceOverrideInputs: <+input>
-                infrastructureDefinitions: <+input>
+                environmentRef: env
+                infrastructureDefinitions:
+                  - identifier: k8s_infra
               service:
                 serviceRef: <+input>
                 serviceInputs: <+input>
