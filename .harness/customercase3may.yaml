@@ -27,3 +27,4 @@ pipeline:
                       artifacts:
                         primary:
                           primaryArtifactRef: Artifact
+                          sources: <+input>
