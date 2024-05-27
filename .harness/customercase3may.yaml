@@ -17,7 +17,7 @@ pipeline:
             spec:
               environment:
                 infrastructureDefinitions:
-                  - identifier: eks_infra
+                  - identifier: K8s_per_Infra
               service:
                 serviceInputs:
                   serviceDefinition:
