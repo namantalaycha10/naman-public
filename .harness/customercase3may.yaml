@@ -16,7 +16,6 @@ pipeline:
             type: Deployment
             spec:
               environment:
-                environmentRef: env
                 infrastructureDefinitions:
                   - identifier: K8s_per_Infra
               service:
