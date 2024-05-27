@@ -13,8 +13,7 @@ template:
       environment:
         environmentRef: env
         deployToAll: false
-        infrastructureDefinitions:
-          - identifier: eks_infra
+        infrastructureDefinitions: <+input>
       service:
         serviceRef: SVC
         serviceInputs:
