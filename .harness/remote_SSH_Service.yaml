@@ -3,3 +3,6 @@ service:
   identifier: remote_SSH_Service
   orgIdentifier: Ng_Pipelines_K8s_Organisations
   projectIdentifier: Naman_Test
+  serviceDefinition:
+    spec: {}
+    type: Ssh
