@@ -1,0 +1,35 @@
+pipeline:
+  name: remote test pipeline
+  identifier: remote_test_pipeline
+  projectIdentifier: DoNotDelete_NamanTest
+  orgIdentifier: Ng_Pipelines_K8s_Organisations
+  tags: {}
+  stages:
+    - stage:
+        name: s1
+        identifier: s1
+        tags: {}
+        template:
+          templateRef: stage_template_CD
+          versionLabel: v1
+          templateInputs:
+            type: Deployment
+            spec:
+              environment:
+                environmentRef: env
+                infrastructureDefinitions:
+                  - identifier: infra
+              service:
+                serviceRef: k8s_service
+                serviceInputs:
+                  serviceDefinition:
+                    type: Kubernetes
+                    spec:
+                      artifacts:
+                        primary:
+                          primaryArtifactRef: Artifact
+                          sources:
+                            - identifier: Artifact
+                              type: DockerRegistry
+                              spec:
+                                tag: <+input>
