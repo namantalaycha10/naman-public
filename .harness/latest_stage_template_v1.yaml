@@ -9,34 +9,31 @@ template:
   spec:
     type: Deployment
     spec:
-      deploymentType: Kubernetes
-      environment:
-        environmentRef: <+input>
-        deployToAll: false
-        environmentInputs: <+input>
-        serviceOverrideInputs: <+input>
-        infrastructureDefinitions: <+input>
-      service:
-        serviceRef: <+input>
-        serviceInputs: <+input>
+      deploymentType: Ssh
       execution:
         steps:
           - step:
-              name: Rollout Deployment
-              identifier: rolloutDeployment
-              type: K8sRollingDeploy
-              timeout: 10m
+              type: ShellScript
+              name: ShellScript_1
+              identifier: ShellScript_1
               spec:
-                skipDryRun: false
-                pruningEnabled: false
-        rollbackSteps:
-          - step:
-              name: Rollback Rollout Deployment
-              identifier: rollbackRolloutDeployment
-              type: K8sRollingRollback
+                shell: Bash
+                executionTarget: {}
+                source:
+                  type: Inline
+                  spec:
+                    script: echo "test"
+                environmentVariables: []
+                outputVariables: []
               timeout: 10m
-              spec:
-                pruningEnabled: false
+        rollbackSteps: []
+      service:
+        serviceRef: <+input>
+        serviceInputs: <+input>
+      environment:
+        environmentRef: env
+        deployToAll: false
+        infrastructureDefinitions: <+input>
     failureStrategies:
       - onFailure:
           errors:
