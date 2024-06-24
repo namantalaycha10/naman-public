@@ -20,8 +20,12 @@ pipeline:
                 spec:
                   artifacts:
                     primary:
-                      primaryArtifactRef: <+input>
-                      sources: <+input>
+                      primaryArtifactRef: artifact
+                      sources:
+                        - identifier: artifact
+                          type: ArtifactoryRegistry
+                          spec:
+                            artifactPath: <+input>
           environment:
             environmentRef: env
             deployToAll: false
