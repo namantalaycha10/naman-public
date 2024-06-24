@@ -1,0 +1,5 @@
+service:
+  name: Artifactory service
+  identifier: Artifactory_service
+  orgIdentifier: Ng_Pipelines_K8s_Organisations
+  projectIdentifier: DoNotDelete_NamanTest
