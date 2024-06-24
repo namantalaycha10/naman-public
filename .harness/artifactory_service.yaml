@@ -1,0 +1,5 @@
+service:
+  name: artifactory service
+  identifier: artifactory_service
+  orgIdentifier: Pipelines_K8s_Organisation
+  projectIdentifier: Naman_Test
