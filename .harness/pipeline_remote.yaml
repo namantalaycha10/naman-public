@@ -20,4 +20,4 @@ pipeline:
                 infrastructureDefinitions:
                   - identifier: infra
               service:
-                serviceRef: artifactory_service
+                serviceRef: k8s_service
