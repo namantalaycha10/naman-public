@@ -43,3 +43,9 @@ template:
             - AllErrors
           action:
             type: StageRollback
+    variables:
+      - name: containerName
+        type: String
+        description: ""
+        required: false
+        value: namantest
