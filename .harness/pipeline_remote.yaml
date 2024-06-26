@@ -1,0 +1,23 @@
+pipeline:
+  name: pipeline remote
+  identifier: pipeline_remote
+  projectIdentifier: Naman_Test
+  orgIdentifier: Pipelines_K8s_Organisation
+  tags: {}
+  stages:
+    - stage:
+        name: s1
+        identifier: s1
+        tags: {}
+        template:
+          templateRef: template_remote
+          versionLabel: v1
+          templateInputs:
+            type: Deployment
+            spec:
+              environment:
+                environmentRef: env
+                infrastructureDefinitions:
+                  - identifier: infra
+              service:
+                serviceRef: artifactory_service
