@@ -1,0 +1,30 @@
+pipeline:
+  name: k8s remote pipeline
+  identifier: k8s_remote_pipeline
+  projectIdentifier: Naman_Test
+  orgIdentifier: Ng_Pipelines_K8s_Organisations
+  tags: {}
+  stages:
+    - stage:
+        name: s1
+        identifier: s1
+        tags: {}
+        template:
+          templateRef: Stage_K8s_Template
+          versionLabel: v1
+          templateInputs:
+            type: Deployment
+            spec:
+              environment:
+                environmentRef: env
+                infrastructureDefinitions:
+                  - identifier: k8s_infra
+              service:
+                serviceRef: SVC
+                serviceInputs:
+                  serviceDefinition:
+                    type: Kubernetes
+                    spec:
+                      artifacts:
+                        primary:
+                          primaryArtifactRef: Artifact
