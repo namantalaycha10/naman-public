@@ -25,8 +25,7 @@ pipeline:
           environment:
             environmentRef: env
             deployToAll: false
-            infrastructureDefinitions:
-              - identifier: ssh_aws
+            infrastructureDefinitions: <+input>
           execution:
             steps:
               - stepGroup:
