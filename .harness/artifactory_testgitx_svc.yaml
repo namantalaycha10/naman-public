@@ -3,3 +3,18 @@ service:
   identifier: artifactory_testgitx_svc
   orgIdentifier: Ng_Pipelines_K8s_Organisations
   projectIdentifier: Naman_Test
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: org.ArtifactoryConnectorForAutomationTest
+                artifactDirectory: /
+                artifactPath: <+input>
+                repository: todolist-tutorial
+                repositoryFormat: generic
+              identifier: artifact
+              type: ArtifactoryRegistry
+    type: Ssh
