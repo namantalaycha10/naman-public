@@ -1,0 +1,5 @@
+service:
+  name: Artifactory test-gitx svc
+  identifier: Artifactory_testgitx_svc
+  orgIdentifier: Ng_Pipelines_K8s_Organisations
+  projectIdentifier: DoNotDelete_NamanTest
