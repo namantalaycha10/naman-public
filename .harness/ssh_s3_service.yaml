@@ -12,7 +12,7 @@ service:
                 connectorRef: org.KubernetesEksIRSAConnectorForAutomationTest
                 bucketName: cdp-automation
                 region: us-east-1
-                filePath: todolist-war.tgz
+                filePath: <+input>
               identifier: artifact
               type: AmazonS3
       variables:
@@ -27,3 +27,5 @@ service:
           required: false
           value: myfiles
   gitOpsEnabled: false
+  orgIdentifier: Ng_Pipelines_K8s_Organisations
+  projectIdentifier: DoNotDelete_NamanTest
