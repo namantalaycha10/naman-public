@@ -13,7 +13,7 @@ pipeline:
         spec:
           deploymentType: Ssh
           service:
-            serviceRef: Artifactory_service
+            serviceRef: ssh_s3_service
             serviceInputs:
               serviceDefinition:
                 type: Ssh
