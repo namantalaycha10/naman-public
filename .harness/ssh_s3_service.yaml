@@ -1,0 +1,29 @@
+service:
+  name: ssh s3 service
+  identifier: ssh_s3_service
+  serviceDefinition:
+    type: Ssh
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: org.KubernetesEksIRSAConnectorForAutomationTest
+                bucketName: cdp-automation
+                region: us-east-1
+                filePath: todolist-war.tgz
+              identifier: artifact
+              type: AmazonS3
+      variables:
+        - name: WORKING_DIRECTORY
+          type: String
+          description: ""
+          required: false
+          value: /tmp
+        - name: EC2_FOLDER
+          type: String
+          description: ""
+          required: false
+          value: myfiles
+  gitOpsEnabled: false
