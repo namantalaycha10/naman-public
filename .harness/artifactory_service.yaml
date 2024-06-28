@@ -3,3 +3,18 @@ service:
   identifier: artifactory_service
   orgIdentifier: Pipelines_K8s_Organisation
   projectIdentifier: Naman_Test
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: naman_Artifactory
+                artifactDirectory: /
+                artifactPath: <+input>
+                repository: todolist-tutorial
+                repositoryFormat: generic
+              identifier: artifactmain
+              type: ArtifactoryRegistry
+    type: Ssh
